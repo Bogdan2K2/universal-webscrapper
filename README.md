@@ -4,6 +4,11 @@ Universal Web Scrapper is a production-ready Next.js application that crawls web
 
 Live app: https://universal-webscrapper.vercel.app
 
+## Prerequisites
+
+- Node.js 20+
+- npm 10+
+
 ## Interface Preview
 
 ![Universal Web Scrapper interface](docs/images/universal-webscrapper-ui.png)
@@ -84,7 +89,13 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-### 3. Production build
+### 3. Quality checks
+
+```bash
+npm run lint
+```
+
+### 4. Production build
 
 ```bash
 npm run build
