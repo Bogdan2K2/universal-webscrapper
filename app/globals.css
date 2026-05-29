@@ -1,0 +1,190 @@
+:root {
+  --bg: #f4f8ff;
+  --surface: #ffffff;
+  --surface-alt: #eef4ff;
+  --ink: #0f243c;
+  --ink-soft: #35506f;
+  --accent: #007a6c;
+  --accent-strong: #005d53;
+  --danger: #b8233c;
+  --shadow: 0 22px 55px rgba(13, 36, 63, 0.18);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 12%, rgba(0, 122, 108, 0.14), transparent 28%),
+    radial-gradient(circle at 82% 76%, rgba(7, 78, 196, 0.16), transparent 36%),
+    linear-gradient(145deg, #f5f9ff 0%, #e9f2ff 100%);
+  font-family: var(--font-code), "Consolas", monospace;
+}
+
+.page-wrap {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.hero-card,
+.form-card {
+  background: var(--surface);
+  border: 1px solid #dbe6fb;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  padding: 34px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -120px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 122, 108, 0.2) 0%, rgba(0, 122, 108, 0) 65%);
+}
+
+h1 {
+  margin: 10px 0 8px;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.03;
+  font-family: var(--font-title), "Segoe UI", sans-serif;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 760px;
+  line-height: 1.6;
+}
+
+.form-card {
+  padding: 24px;
+}
+
+form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.92rem;
+}
+
+input[type="url"],
+input[type="number"] {
+  width: 100%;
+  border: 1px solid #cfdcf2;
+  background: var(--surface-alt);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 12px 13px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+input[type="url"]:focus,
+input[type="number"]:focus {
+  border-color: #6ba9ff;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.14);
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.checks {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 6px 0 4px;
+}
+
+.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.check input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--accent);
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent) 0%, #0f8ac4 100%);
+  cursor: pointer;
+  transition: transform 0.16s ease, filter 0.16s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.status,
+.error {
+  margin: 12px 2px 0;
+  font-size: 0.93rem;
+}
+
+.status {
+  color: var(--accent-strong);
+}
+
+.error {
+  color: var(--danger);
+}
+
+@media (max-width: 840px) {
+  .grid.two,
+  .grid.checks {
+    grid-template-columns: 1fr;
+  }
+
+  .page-wrap {
+    padding-top: 26px;
+  }
+
+  .hero-card,
+  .form-card {
+    padding: 20px;
+  }
+}
