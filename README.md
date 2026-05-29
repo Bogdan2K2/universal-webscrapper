@@ -4,6 +4,17 @@ Universal Web Scrapper is a production-ready Next.js application that crawls web
 
 Live app: https://universal-webscrapper.vercel.app
 
+## Interface Preview
+
+![Universal Web Scrapper interface](docs/images/universal-webscrapper-ui.png)
+
+This screenshot shows the main dashboard where you configure a crawl job:
+- set the target URL
+- control page/depth limits
+- tune timeout and asset budgets
+- toggle subdomain crawling, `robots.txt` compliance, and binary asset download
+- start extraction and download the generated ZIP archive
+
 ## What it does
 
 - Crawls pages starting from a target URL
